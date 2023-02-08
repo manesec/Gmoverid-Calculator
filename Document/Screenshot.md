@@ -1,6 +1,6 @@
 # Screenshot
 
-Back to [document](README.md).
+Back to [Document](Readme.md).
 
 
 ## A Main Windows

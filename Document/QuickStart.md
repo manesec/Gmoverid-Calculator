@@ -1,6 +1,6 @@
 # Quick Start
 
-Back to [Document](README.md).
+Back to [Document](Readme.md).
 
 Please watch a video in youtube:
 [Tutorial: Quick start gm/id Calculator](https://youtu.be/4sbCtTHqbB8)

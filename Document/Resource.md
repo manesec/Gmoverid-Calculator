@@ -1,6 +1,6 @@
 # Learn Resource 
 
-Back to [Document](README.md).
+Back to [Document](Readme.md).
 
 Learning gm/id Methods and collect from internet.
 
