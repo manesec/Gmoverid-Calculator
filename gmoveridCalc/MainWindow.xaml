@@ -1,0 +1,64 @@
+﻿<adonisControls:AdonisWindow x:Class="gmoveridCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gmoveridCalc"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        mc:Ignorable="d" Closing="AdonisWindow_Closing"
+        Title="Gmoverid Calc" Height="500" Width="800" Background="#404258" ResizeMode="NoResize"
+        PlaceTitleBarOverContent="True" >
+
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+
+    <StackPanel>
+        <Grid Height="500">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Left -->
+            <StackPanel Grid.Column="0">
+                <Label x:Name="Label_LoadedLibrary" Content="" Margin="0 7 0 0" HorizontalAlignment="Center"  FontWeight="Normal"></Label>
+                <Frame x:Name="Frame_Disaplay" Source="Page_Frist.xaml" Grid.Column="0" NavigationUIVisibility="Hidden"></Frame>
+            </StackPanel>
+            
+            <!-- Right -->
+            <StackPanel Grid.Column="1" Background="#474E68">
+                <Button Content="Load Library" x:Name="Button_LoadLibrary" BorderBrush="{x:Null}" Margin="0 30 0 0" Click="Button_LoadLibrary_Click"></Button>
+                <Button Content="gm/id" x:Name="Button_gm_id" Click="Button_gm_id_Click"></Button> 
+                <Button Content="id/w" x:Name="Button_ID_W" Click="Button_ID_W_Click"></Button> 
+                <Button Content="gm/gds (gm*ro)" x:Name="Button_gm_gds" Click="Button_gm_gds_Click"></Button> 
+                <Button Content="Vd_sat" x:Name="Button_Vd_sat" Click="Button_Vd_sat_Click"></Button> 
+                <Button Content="Cgd/Cgg" x:Name="Button_Cgd_Cgg" Click="Button_Cgd_Cgg_Click"></Button> 
+                <Button Content="Cdd/Cgg" x:Name="Button_Cdd_Cgg" Click="Button_Cdd_Cgg_Click"></Button> 
+                <Button Content="Vgs-Vth" x:Name="Button_Vgs_Vth" Click="Button_Vgs_Vth_Click"></Button> 
+                <Button Content="ft" x:Name="Button_ft" Click="Button_ft_Click"></Button> 
+                <Button Content="Library Info" x:Name="Button_libraryInfo" Click="Button_libraryInfo_Click"></Button> 
+                <Button Content="Tools" x:Name="Button_tools" Click="Button_tools_Click"></Button>
+                <Label Content="Code by @manesec." Margin="0 5 0 0" Foreground="#FF9FA2C1" HorizontalAlignment="Center" FontWeight="Normal"></Label>
+                <StackPanel.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Style.Setters>
+                            <Setter Property="Margin" Value="00 0 00 0"></Setter>
+                            <Setter Property="Height" Value="40"></Setter>
+                            <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+                            <Setter Property="Background" Value="#474E68"></Setter>
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" Value="#6B728E"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+            </StackPanel>
+                
+        </Grid>
+        
+    </StackPanel>
+</adonisControls:AdonisWindow>

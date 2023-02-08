@@ -1,0 +1,145 @@
+﻿<Page x:Class="LibraryMaker.Page_AddCSVFile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryMaker"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="Page_AddCSVFile">
+
+
+    <StackPanel Margin="0 30 0 0">
+        <Label Content="Step 1/4 : Get the 10 files" FontSize="25" Margin="20 10 0 0"></Label>
+        <Label Content="Only support .csv file. if you don't know, please click help button." FontSize="15" Margin=" 50 10 0 0"></Label>
+
+        <!-- file input -->
+        <StackPanel x:Name="StackPanel_rawfiles">
+
+            <Grid Margin="10 20 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="cdd :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Cdd,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="cdd" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="cgd :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Cgd,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="cgd" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="cgg :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Cgg,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="cgg" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="fug :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Ft,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="ft" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="gds :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Gds,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="gds" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="gm :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Gm,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="gm" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="id :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Id,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="id" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="vd__sat :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Vd_sat,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="vd_sat" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="vgs :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Vgs,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="vgs" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+            <Grid Margin="10 15 0 0" Width="550">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="vth :" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                <TextBox Text="{Binding Path=Vth,Mode=TwoWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Button Content="Select" Margin="10 0 0 0" Grid.Row="0" Grid.Column="2" Tag="vth" Click="BTN_ChangePath_Click" ></Button>
+            </Grid>
+
+        </StackPanel>
+
+        <Grid Margin="10 30 0 0" Width="550"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Height="40" Margin="5 0 0 0"  Grid.Column="0" x:Name="Button_Help"  Content="Help" Click="Button_Help_Click"></Button>
+            <Button Height="40" Margin="5 0 0 0" Grid.Column="1" x:Name="Button_LoadTables"  Content="Load Tables" Click="Button_LoadTables_Click" ></Button>
+            <Button Height="40" Margin="5 0 0 0" Grid.Column="2" x:Name="Button_LoadFolder"  Content="Load Folder" Click="Button_LoadFolder_Click"></Button>
+            <Button Height="40" Margin="5 0 0 0" Grid.Column="3" x:Name="Button_CheckAndContinue" Content="Check And Continue" Click="Button_CheckAndContinue_Click"></Button>
+        </Grid>
+
+    </StackPanel>
+</Page>

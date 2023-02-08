@@ -1,0 +1,94 @@
+﻿<Page x:Class="LibraryMaker.Page_Poly_Error"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryMaker"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Page_Poly_Error">
+
+    <StackPanel Margin="0 30 0 0" HorizontalAlignment="Left"  Width="600">
+        <Label Content="Step 3/4 : Error Prediction" FontSize="25" Margin="20 10 0 0"></Label>
+        <Label Content="Find a Good polynomial optimization." FontSize="15" Margin=" 50 10 0 0"></Label>
+        <Label Content="This program uses polynomial curve fitting technique to get the data." FontWeight="Normal" Margin="100 10 0 0" ></Label>
+        <Label Content="If the poly parameter is very large, the fitting time will be very long " FontWeight="Normal" Margin="100 5 0 0" ></Label>
+        <Label Content="and the error will be small." FontWeight="Normal" Margin="100 5 0 0" ></Label>
+
+
+        <StackPanel Width="400"  Margin="0 20 0 0">
+            <Grid Width="400" Height="35"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Poly Parameter :" Margin="0 0 10 0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" ></Label>
+                <TextBox x:Name="TB_InputPolyNumber" TextChanged="TB_InputPolyNumber_TextChanged" Grid.Column="1"></TextBox>
+                <Button Content="Test" x:Name="BTN_CheckPolyPara" Grid.Column="2" Margin="10 0 0 0" Click="BTN_CheckPolyPara_Click"></Button>
+
+            </Grid>
+
+            <StackPanel>
+                <Label Content="Note: Poly Parameter in 10 ~ 100 will be good." FontWeight="Normal" Margin="60 5 0 0"> </Label>
+                <Label Content="Sometimes will be bigger than 100." FontWeight="Normal" Margin="100 5 0 0"> </Label>
+                <Label Content="It looks like it was decided by your data." FontWeight="Normal" Margin="100 5 0 0"> </Label>
+            </StackPanel>
+
+        </StackPanel>
+        
+        <Label Content="Error Prediction : (not accurate)" FontSize="15" Margin=" 50 20 0 0"></Label>
+        <Grid Height="150" Width="500" Margin="0 10 0 0" x:Name="Grid_error">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <Label Content="gm/id vs id/w = " Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content= "{Binding Path=Gm_id_id_w,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs gm/gds = " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_gm_gds,Mode=OneWay,NotifyOnSourceUpdated=True}"  Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs vd_sat = " Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_vdsat,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs cgd/cgg = " Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_cgd_cgg,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs cdd/cgg = " Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_cdd_cgg,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs ft = " Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_ft,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs vgs-vth = " Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_vgs_vth,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs cgg = " Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_cgg,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs cgd = " Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_cgd,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></Label>
+
+            <Label Content="gm/id vs cdd = " Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Content="{Binding Path=Gm_id_cdd,Mode=OneWay,NotifyOnSourceUpdated=True}" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center"></Label>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" Margin="50 20 0 0">
+            <Button x:Name="BTN_Back" Content="Back" Width="200" Height="40" Margin="0 0 0 0" Click="BTN_Back_Click" ></Button>
+            <Button x:Name="BTN_Next" IsEnabled="False" Content="Make Library" Width="200" Height="40" Margin="100 0 0 0" Click="BTN_Next_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</Page>

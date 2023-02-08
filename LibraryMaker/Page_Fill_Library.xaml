@@ -1,0 +1,78 @@
+﻿<Page x:Class="LibraryMaker.Page_Fill_Library"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryMaker"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="800"   Title="Page_Fill_Library">
+
+    <StackPanel Margin="0 30 0 0" x:Name="SP_fill_library">
+        <Label Content="Step 2/4 : Fill Library Information" FontSize="25" Margin="20 10 0 0"></Label>
+        <Label Content="Fill the information about the library." FontSize="15" Margin=" 50 10 0 0"></Label>
+
+        <Grid  Height="200" Margin="20 20 20 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <Label Margin="5" Content="Library Name" FontSize="15" HorizontalAlignment="Left" ></Label>
+                <TextBox Margin="5" Text="{Binding Path=Libraryname,Mode=TwoWay,NotifyOnSourceUpdated=True}"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <Label Margin="5" Content="Output File Name (Without .gmidc)" FontSize="15" HorizontalAlignment="Left" ></Label>
+                <TextBox Margin="5" Text="{Binding Path=OutputFileName,Mode=TwoWay,NotifyOnSourceUpdated=True}"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <Label Margin="5" Content="Scan L " FontSize="15" HorizontalAlignment="Left" ></Label>
+                <TextBox Margin="5" Text="{Binding Path=L,Mode=TwoWay,NotifyOnSourceUpdated=True}"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Label Margin="5" Content="Scan W " FontSize="15" HorizontalAlignment="Left" ></Label>
+                <TextBox Margin="5" Text="{Binding Path=W,Mode=TwoWay,NotifyOnSourceUpdated=True}"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <Label Margin="5" Content="Mosfet Type" FontSize="15" HorizontalAlignment="Left" ></Label>
+                <ComboBox Margin="5" SelectedIndex="{Binding Path=Mosfettype,Mode=TwoWay,NotifyOnSourceUpdated=True}">
+                    <ComboBoxItem Content="NMOS"></ComboBoxItem>
+                    <ComboBoxItem Content="PMOS"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <Label Margin="5" Content="Scan Mul" FontSize="15" HorizontalAlignment="Left" ></Label>
+                <TextBox Margin="5" Text="{Binding Path=Mul,Mode=TwoWay,NotifyOnSourceUpdated=True}"></TextBox>
+            </StackPanel>
+
+            
+        </Grid>
+        
+        
+        <StackPanel Margin="20 0 20 0">
+            <Label Margin="5" Content="Note" FontSize="15" HorizontalAlignment="Left" ></Label>
+            <TextBox Margin="5" Text="{Binding Path=Note,Mode=TwoWay,NotifyOnSourceUpdated=True}" TextAlignment="Left" Height="140" Width="600" TextWrapping="Wrap" IsUndoEnabled="False"
+                VerticalScrollBarVisibility="Visible" AcceptsReturn="True" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"></TextBox>
+
+
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="BTN_Back" Margin="5 10 0 0" Content="Back" Width="200" Height="40" Click="BTN_Back_Click"></Button>
+                <Button x:Name="BTN_Next" Margin="148 10 5 0" Content="Next" Width="200" Height="40" Click="BTN_Next_Click"></Button>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        
+    </StackPanel>
+</Page>

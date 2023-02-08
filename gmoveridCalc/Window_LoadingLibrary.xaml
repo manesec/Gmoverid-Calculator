@@ -1,0 +1,28 @@
+﻿<adonisControls:AdonisWindow x:Class="gmoveridCalc.Window_LoadingLibrary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+        xmlns:local="clr-namespace:gmoveridCalc" Closing="AdonisWindow_Closing"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        mc:Ignorable="d" Loaded="AdonisWindow_Loaded" ResizeMode="NoResize" IconVisibility="Hidden" WindowStartupLocation="CenterScreen"
+        Title="Please Wait" Height="120" Width="300" Background="#404258" 
+        PlaceTitleBarOverContent="True" >
+    
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+
+    <StackPanel HorizontalAlignment="Center" Margin="0 40 0 0">
+        <ProgressBar x:Name="process_bar" adonisExtensions:ProgressBarExtension.Content="{Binding Path=Process_bar_message,Mode=OneWay,NotifyOnSourceUpdated=True}"
+             Width="250" Height="25"
+             Minimum="0"
+             Value="{Binding Path=Process_bar_value,Mode=OneWay,NotifyOnSourceUpdated=True}"
+             Maximum="100"
+             Padding="0, 2"/>
+        
+        <Button Content="Cancel" Margin="0 10 0 0" Height="30" Width="80" Click="Button_Click"></Button>
+    </StackPanel>
+    
+</adonisControls:AdonisWindow>

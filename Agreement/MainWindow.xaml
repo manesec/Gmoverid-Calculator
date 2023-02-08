@@ -1,0 +1,45 @@
+﻿<adonisControls:AdonisWindow x:Class="Agreement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agreement"
+        xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        PlaceTitleBarOverContent="True"
+        mc:Ignorable="d" Background="#343434" ResizeMode="NoResize" TitleVisibility="Hidden" IconVisibility="Hidden"
+                             Title="Agreement" Height="600" Width="600">
+
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+
+    <!-- Main Windows Content -->
+    <StackPanel>
+        <StackPanel x:Name="TitleColor">
+            <StackPanel.Height>30</StackPanel.Height>
+            <StackPanel.Background>#343434</StackPanel.Background>
+        </StackPanel>
+
+        <Label x:Name="Label_Tittle" Content="GNU GPLv3 License" FontSize="30px" HorizontalAlignment="Center" Foreground="#e1e1e1" Margin="0 0 0 5"></Label>
+        <Label x:Name="Label_SubTittle" Content="You must agree to continue." FontSize="15px" HorizontalAlignment="Center" Foreground="#e1e1e1" FontWeight="Normal"></Label>
+        <TextBox x:Name="TextBox_Agreement" Margin="20 20 20 10" Height="400px" TextAlignment="Left" TextWrapping="Wrap" IsReadOnly="True" IsUndoEnabled="False"
+                VerticalScrollBarVisibility="Visible" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" ContextMenu="{x:Null}" 
+                 
+                 ></TextBox>
+        
+        <!-- Button -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="I am disagree." x:Name="Button_Disagree" Click="Button_Disagree_Click" Margin="20 10 0 10" Height="40" Width="120"></Button>
+            <Button Content="I am agree and let me to continue." x:Name="Button_Agree" Click="Button_Agree_Click" Margin="20 10 20 10" Height="40" Width="300" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        </StackPanel>
+        
+        
+     
+        
+    </StackPanel>
+    
+    
+    
+</adonisControls:AdonisWindow>

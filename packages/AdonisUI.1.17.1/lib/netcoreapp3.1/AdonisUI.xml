@@ -1,0 +1,1331 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdonisUI</name>
+    </assembly>
+    <members>
+        <member name="T:AdonisUI.Controls.AdonisWindow">
+            <summary>
+            Window with custom chrome supporting theming of non-client areas
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.IconVisibility">
+            <summary>
+            Gets or sets the visibility of the icon component of the window.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.IconSource">
+            <summary>
+            Gets or sets the window's icon as <see cref="T:System.Windows.Media.ImageSource">ImageSource</see>.
+            When the <see cref="F:System.Windows.Window.IconProperty">IconProperty</see> property changes, this is updated accordingly.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.TitleBarActualHeight">
+            <summary>
+            Gets the title bar actual height.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.TitleBarContent">
+            <summary>
+            Gets or sets the content of the window's title bar
+            between the title and the window buttons.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.TitleBarForeground">
+            <summary>
+            Gets or sets the foreground brush of the window's title bar.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.TitleBarBackground">
+            <summary>
+            Gets or sets the background brush of the window's title bar.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.TitleVisibility">
+            <summary>
+            Gets or sets the visibility of the title component of the window.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.WindowButtonHighlightBrush">
+            <summary>
+            Gets or sets the background brush of the minimize, maximize and restore
+            buttons when they are hovered.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.MaximizeBorderThickness">
+            <summary>
+            Gets the size of the display overlapping area when the window is maximized.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.ShrinkTitleBarWhenMaximized">
+            <summary>
+            Controls whether to shrink the title bar height a little when the window is maximized.
+            The default is <see langword="true"/> as this is how native windows behave.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdonisWindow.PlaceTitleBarOverContent">
+            <summary>
+            Controls whether the title bar should be drawn over the window content instead of being stacked on top of it.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.OnApplyTemplate">
+            <inheritdoc/>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.InitDragMoveThumb(System.Windows.FrameworkElement)">
+            <summary>
+            Initializes functionality of the drag/move thumb component of the window's title bar.
+            </summary>
+            <param name="dragMoveThumb">The drag/move thumb component of the window</param>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.InitMinimizeButton(System.Windows.Controls.Button)">
+            <summary>
+            Initializes functionality of the minimize button of the window's title bar.
+            </summary>
+            <param name="minimizeButton">The minimize button of the window</param>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.InitMaximizeRestoreButton(System.Windows.Controls.Button)">
+            <summary>
+            Initializes functionality of the maximize/restore button of the window's title bar.
+            </summary>
+            <param name="maximizeRestoreButton">The maximize/restore button of the window</param>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.InitCloseButton(System.Windows.Controls.Button)">
+            <summary>
+            Initializes functionality of the close button of the window's title bar.
+            </summary>
+            <param name="closeButton">The close button of the window</param>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.InitIconPresenter(System.Windows.FrameworkElement)">
+            <summary>
+            Initializes functionality of the icon presenter component of the window's title bar.
+            </summary>
+            <param name="iconPresenter">The icon presenter component of the window</param>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.CloseClick(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the close button's click event.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.MaximizeRestoreClick(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the maximize/restore button's click event.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.MinimizeClick(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the minimize button's click event.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.ToggleWindowState">
+            <summary>
+            Sets the <see cref="P:System.Windows.Window.WindowState"/> to <see cref="F:System.Windows.WindowState.Maximized"/>
+            if it is currently at <see cref="F:System.Windows.WindowState.Normal"/> or else to <see cref="F:System.Windows.WindowState.Normal"/>.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.TransformToScreenCoordinates(System.Windows.Size)">
+            <summary>
+            Converts a Size that represents the current coordinate system of the window
+            into a Size in screen coordinates.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.TransformToWindowCoordinates(System.Windows.Size)">
+            <summary>
+            Converts a <see cref="T:System.Windows.Size"/> that represents the native coordinate system of the screen
+            into a <see cref="T:System.Windows.Size"/> in device independent coordinates.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.TransformToWindowCoordinates(System.Windows.Point)">
+            <summary>
+            Converts a Point that represents the native coordinate system of the screen
+            into a Point in device independent coordinates.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.OpenSystemContextMenu(System.Windows.Point)">
+            <summary>
+            Displays the system's native window context menu at the given position.
+            </summary>
+            <param name="positionInWindow">Coordinate of top left corner of the context menu relative to the window</param>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.UpdateLayoutForSizeToContent">
+            <summary>
+            When using <see cref="F:System.Windows.SizeToContent.WidthAndHeight"/> the layout might not be calculated correctly
+            which can result in the window being too large and having large black borders filling the remaining space.
+            This method can be used to force a layout update again to recalculate the window size correctly.
+            See https://social.msdn.microsoft.com/Forums/vstudio/en-US/89fe6959-ce1a-4064-bdde-94151df7dc01/gradient-style-issue-when-sizetocontentheightandwidth-with-customchrome?forum=wpf
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdonisWindow.DisableSizeToContentWhenMaximizing(System.Object,AdonisUI.Helpers.HwndInteropPositionChangingEventArgs)">
+            <summary>
+            In order to maximize the window correctly, <see cref="F:System.Windows.SizeToContent.WidthAndHeight"/> must not be set.
+            This method ensures that <see cref="F:System.Windows.SizeToContent.Manual"/> is set when the window is about to be maximized.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.AdornedControl">
+            <summary>
+            A content control that allows an adorner for the content to
+            be defined in XAML.
+            Taken from: https://www.codeproject.com/Articles/54472/Defining-WPF-Adorners-in-XAML
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.AdornedControl.IsAdornerVisibleProperty">
+            <summary>
+            Dependency properties.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.AdornedControl.ShowAdornerCommand">
+            <summary>
+            Commands.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.AdornedControl_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Event raised when the DataContext of the adorned control changes.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.UpdateAdornerDataContext">
+            <summary>
+            Update the DataContext of the adorner from the adorned control.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.ShowAdorner">
+            <summary>
+            Show the adorner.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.HideAdorner">
+            <summary>
+            Hide the adorner.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdornedControl.IsAdornerVisible">
+            <summary>
+            Shows or hides the adorner.
+            Set to 'true' to show the adorner or 'false' to hide the adorner.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdornedControl.AdornerContent">
+            <summary>
+            Used in XAML to define the UI content of the adorner.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdornedControl.HorizontalAdornerPlacement">
+            <summary>
+            Specifies the horizontal placement of the adorner relative to the adorned control.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdornedControl.VerticalAdornerPlacement">
+            <summary>
+            Specifies the vertical placement of the adorner relative to the adorned control.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdornedControl.AdornerOffsetX">
+            <summary>
+            X offset of the adorner.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.AdornedControl.AdornerOffsetY">
+            <summary>
+            Y offset of the adorner.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.AdornedControl.ShowAdornerCommandBinding">
+            <summary>
+            Command bindings.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.AdornedControl.adornerLayer">
+            <summary>
+            Caches the adorner layer.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.AdornedControl.adorner">
+            <summary>
+            The actual adorner create to contain our 'adorner UI content'.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.#cctor">
+            <summary>
+            Static constructor to register command bindings.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.ShowAdornerCommand_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            Event raised when the Show command is executed.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.HideAdornerCommand_Executed(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            Event raised when the Hide command is executed.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.IsAdornerVisible_PropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Event raised when the value of IsAdornerVisible has changed.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.AdornerContent_PropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Event raised when the value of AdornerContent has changed.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.ShowOrHideAdornerInternal">
+            <summary>
+            Internal method to show or hide the adorner based on the value of IsAdornerVisible.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.ShowAdornerInternal">
+            <summary>
+            Internal method to show the adorner.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.AdornedControl.HideAdornerInternal">
+            <summary>
+            Internal method to hide the adorner.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.FrameworkElementAdorner.adornedElement_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Event raised when the adorned control's size has changed.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.FrameworkElementAdorner.DetermineX">
+            <summary>
+            Determine the X coordinate of the child.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.FrameworkElementAdorner.DetermineY">
+            <summary>
+            Determine the Y coordinate of the child.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.FrameworkElementAdorner.DetermineWidth">
+            <summary>
+            Determine the width of the child.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.FrameworkElementAdorner.DetermineHeight">
+            <summary>
+            Determine the height of the child.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.FrameworkElementAdorner.DisconnectChild">
+            <summary>
+            Disconnect the child element from the visual tree so that it may be reused later.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.FrameworkElementAdorner.AdornedElement">
+            <summary>
+            Override AdornedElement from base class for less type-checking.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.IMessageBoxButtonModel">
+            <summary>
+            Exposes properties used to configure the appearance and behavior of a single button of some <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxButtonModel.Id">
+            <summary>
+            An <see cref="T:System.Object"/> that can be used to identify the button.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxButtonModel.Label">
+            <summary>
+            A <see cref="T:System.String"/> that specifies the content of the button.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxButtonModel.CausedResult">
+            <summary>
+            A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> that will be used as <see cref="P:AdonisUI.Controls.IMessageBoxModel.Result"/> of the parent message box if the button is pressed.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxButtonModel.IsDefault">
+            <summary>
+            A <see cref="T:System.Boolean"/> that specifies if the button should be preselected when opening the message box.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxButtonModel.IsCancel">
+            <summary>
+            A <see cref="T:System.Boolean"/> that specifies if the button should be pressed when the user presses the escape key.
+            If at least one button in <see cref="P:AdonisUI.Controls.IMessageBoxModel.Buttons"/> has this property set to <see langword="true"/> the <see cref="T:AdonisUI.Controls.MessageBoxWindow"/> displays the window close button.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.IMessageBoxCheckBoxModel">
+            <summary>
+            Exposes properties used to configure the appearance and behavior of a single check box of some <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxCheckBoxModel.Label">
+            <summary>
+            A <see cref="T:System.String"/> that specifies the content of the check box.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxCheckBoxModel.IsChecked">
+            <summary>
+            A <see cref="T:System.Boolean"/> that specifies if the check box is checked.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxCheckBoxModel.Placement">
+            <summary>
+            A <see cref="T:AdonisUI.Controls.MessageBoxCheckBoxPlacement"/> that specifies where the check box is placed inside the message box.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.IMessageBoxModel">
+            <summary>
+            Exposes properties used to configure the appearance and behavior of a <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.Text">
+            <summary>
+            A <see cref="T:System.String"/> that specifies the text to display.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.Caption">
+            <summary>
+            A <see cref="T:System.String"/> that specifies the title bar caption to display.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.Buttons">
+            <summary>
+            A collection of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that specifies which buttons to display.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.CheckBoxes">
+            <summary>
+            A collection of <see cref="T:AdonisUI.Controls.IMessageBoxCheckBoxModel"/> that specifies which check boxes to display.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.Icon">
+            <summary>
+            A <see cref="T:AdonisUI.Controls.MessageBoxImage"/> value that specifies the icon to display.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.Result">
+            <summary>
+            A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies the result the message box button that was clicked by the user returned.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.ButtonPressed">
+            <summary>
+            An <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that specifies which message box button is clicked by the user.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.IMessageBoxModel.IsSoundEnabled">
+            <summary>
+            Specifies whether a system sound is played when the message box window opens. Which sound is played depends on the <see cref="P:AdonisUI.Controls.IMessageBoxModel.Icon"/>.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBox">
+            <summary>
+            Displays a message box.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBox.Show(System.String)">
+            <summary>
+            Displays a message box that has a message and that returns a result.
+            </summary>
+            <param name="text">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <returns>A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBox.Show(AdonisUI.Controls.IMessageBoxModel)">
+            <summary>
+            Displays a message box that is configured like specified in the <see cref="T:AdonisUI.Controls.IMessageBoxModel"/> and that returns a result.
+            </summary>
+            <param name="messageBoxModel">An <see cref="T:AdonisUI.Controls.IMessageBoxModel"/> that configures the appearance and behavior of the message box.</param>
+            <returns>A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBox.Show(System.Windows.Window,AdonisUI.Controls.IMessageBoxModel)">
+            <summary>
+            Displays a message box in front of the specified window. The message box is configured like specified in the <see cref="T:AdonisUI.Controls.IMessageBoxModel"/> and returns a result.
+            </summary>
+            <param name="owner">A <see cref="T:System.Windows.Window"/> that represents the owner window of the message box.</param>
+            <param name="messageBoxModel">An <see cref="T:AdonisUI.Controls.IMessageBoxModel"/> that configures the appearance and behavior of the message box.</param>
+            <returns>A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBox.Show(System.String,System.String,AdonisUI.Controls.MessageBoxButton,AdonisUI.Controls.MessageBoxImage,AdonisUI.Controls.MessageBoxResult)">
+            <summary>
+            Displays a message box that has a message, title bar caption, button, and icon; and that accepts a default message box result and returns a result.
+            </summary>
+            <param name="text">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <param name="caption">A <see cref="T:System.String"/> that specifies the title bar caption to display.</param>
+            <param name="buttons">A <see cref="T:AdonisUI.Controls.MessageBoxButton"/> value that specifies which button or buttons to display.</param>
+            <param name="icon">A <see cref="T:AdonisUI.Controls.MessageBoxImage"/> value that specifies the icon to display.</param>
+            <param name="defaultResult">A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies the default result of the message box.</param>
+            <returns>A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBox.Show(System.Windows.Window,System.String,System.String,AdonisUI.Controls.MessageBoxButton,AdonisUI.Controls.MessageBoxImage,AdonisUI.Controls.MessageBoxResult)">
+            <summary>
+            Displays a message box in front of the specified window. The message box displays a message, title bar caption, button, and icon; and accepts a default message box result and returns a result.
+            </summary>
+            <param name="owner">A <see cref="T:System.Windows.Window"/> that represents the owner window of the message box.</param>
+            <param name="text">A <see cref="T:System.String"/> that specifies the text to display.</param>
+            <param name="caption">A <see cref="T:System.String"/> that specifies the title bar caption to display.</param>
+            <param name="buttons">A <see cref="T:AdonisUI.Controls.MessageBoxButton"/> value that specifies which button or buttons to display.</param>
+            <param name="icon">A <see cref="T:AdonisUI.Controls.MessageBoxImage"/> value that specifies the icon to display.</param>
+            <param name="defaultResult">A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies the default result of the message box.</param>
+            <returns>A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> value that specifies which message box button is clicked by the user.</returns>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxButton">
+            <summary>
+            Specifies the buttons that are displayed on a message box.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxButton.OK">
+            <summary>
+            The message box displays an OK button.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxButton.OKCancel">
+            <summary>
+            The message box displays OK and Cancel buttons.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxButton.YesNoCancel">
+            <summary>
+            The message box displays Yes, No and Cancel buttons.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxButton.YesNo">
+            <summary>
+            The message box displays Yes and No buttons.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxButtonModel">
+            <summary>
+            The default implementation of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> used to configure the appearance and behavior of a single button of some <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxButtonModel.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxButtonModel.Label">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxButtonModel.CausedResult">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxButtonModel.IsDefault">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxButtonModel.IsCancel">
+            <inheritdoc/>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtonModel.#ctor(System.String,AdonisUI.Controls.MessageBoxResult)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.MessageBoxButtonModel"/>.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the content of the button.</param>
+            <param name="causedResult">A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> that will be used as <see cref="P:AdonisUI.Controls.IMessageBoxModel.Result"/> of the parent message box if the button is pressed.</param>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxButtons">
+            <summary>
+            Contains methods for creating lists of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.Create(AdonisUI.Controls.MessageBoxButton,System.String[])">
+            <summary>
+            Creates one or more instances of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> depending on the given <see cref="T:AdonisUI.Controls.MessageBoxButton"/>.
+            </summary>
+            <param name="buttons">A <see cref="T:AdonisUI.Controls.MessageBoxButton"/> value that specifies the button or buttons that should be created.</param>
+            <param name="labels">An array of <see cref="T:System.String"/> that allows specifying custom button labels. They are expected in the same order as the <see cref="T:AdonisUI.Controls.MessageBoxButton"/> values are named.</param>
+            <returns>A collection of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.OkCancel(System.String,System.String)">
+            <summary>
+            Creates two instances of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> where one is configured as an OK button the other one as a Cancel button.
+            </summary>
+            <param name="okLabel">A <see cref="T:System.String"/> that specifies the custom label of the OK button.</param>
+            <param name="cancelLabel">A <see cref="T:System.String"/> that specifies the custom label of the Cancel button.</param>
+            <returns>A collection of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.YesNo(System.String,System.String)">
+            <summary>
+            Creates two instances of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> where one is configured as a Yes button the other one as a No button.
+            </summary>
+            <param name="yesLabel">A <see cref="T:System.String"/> that specifies the custom label of the Yes button.</param>
+            <param name="noLabel">A <see cref="T:System.String"/> that specifies the custom label of the No button.</param>
+            <returns>A collection of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.YesNoCancel(System.String,System.String,System.String)">
+            <summary>
+            Creates three instances of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> where one is configured as a Yes button, one as a No button and one as a Cancel button.
+            </summary>
+            <param name="yesLabel">A <see cref="T:System.String"/> that specifies the custom label of the Yes button.</param>
+            <param name="noLabel">A <see cref="T:System.String"/> that specifies the custom label of the No button.</param>
+            <param name="cancelLabel">A <see cref="T:System.String"/> that specifies the custom label of the Cancel button.</param>
+            <returns>A collection of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.Ok(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that is configured as an OK button.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the custom label of the button.</param>
+            <returns>An instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.Yes(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that is configured as a Yes button.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the custom label of the button.</param>
+            <returns>An instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.No(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that is configured as a No button.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the custom label of the button.</param>
+            <returns>An instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.Cancel(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that is configured as a Cancel button.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the custom label of the button.</param>
+            <returns>An instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxButtons.Custom(System.String,System.Object)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/> that is configured as a custom button.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the label of the button.</param>
+            <param name="id">An <see cref="T:System.Object"/> that specifies an optional ID that can be used to identify the button.</param>
+            <returns>An instance of <see cref="T:AdonisUI.Controls.IMessageBoxButtonModel"/>.</returns>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxCheckBoxModel">
+            <summary>
+            The default implementation of <see cref="T:AdonisUI.Controls.IMessageBoxCheckBoxModel"/> used to configure the appearance and behavior of a single check box of some <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxCheckBoxModel.Id">
+            <summary>
+            An <see cref="T:System.Object"/> that can be used to identify the check box.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxCheckBoxModel.Label">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxCheckBoxModel.IsChecked">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxCheckBoxModel.Placement">
+            <inheritdoc/>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxCheckBoxModel.#ctor(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:AdonisUI.Controls.MessageBoxCheckBoxModel"/>.
+            </summary>
+            <param name="label">A <see cref="T:System.String"/> that specifies the content of the check box.</param>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxCheckBoxPlacement">
+            <summary>
+            Specifies where a check box is placed inside a message box.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxCheckBoxPlacement.BelowText">
+            <summary>
+            The check box is placed below the message box's text.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxCheckBoxPlacement.NextToButtons">
+            <summary>
+            The check box is placed next to the message box's buttons inside the button row.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxModel">
+            <summary>
+            The default implementation of <see cref="T:AdonisUI.Controls.IMessageBoxModel"/> used to configure the appearance and behavior of a <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.Text">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.Caption">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.Buttons">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.CheckBoxes">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.Icon">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.Result">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.ButtonPressed">
+            <inheritdoc/>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxModel.IsSoundEnabled">
+            <inheritdoc/>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxModel.SetDefaultButton(AdonisUI.Controls.MessageBoxResult)">
+            <summary>
+            Sets <see cref="P:AdonisUI.Controls.IMessageBoxButtonModel.IsDefault"/> to <see langword="true"/> on the first button that matches the given <paramref name="defaultResult"/>
+            and to <see langword="false"/> on all other buttons.
+            </summary>
+            <param name="defaultResult">The result that matches the default button's <see cref="P:AdonisUI.Controls.IMessageBoxButtonModel.CausedResult"/>.</param>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxModel.SetDefaultButton(AdonisUI.Controls.IMessageBoxButtonModel)">
+            <summary>
+            Sets <see cref="P:AdonisUI.Controls.IMessageBoxButtonModel.IsDefault"/> to <see langword="true"/> on the given button and to <see langword="false"/> on all other buttons.
+            </summary>
+            <param name="defaultButton">The button that is supposed to be the default button. It must be part of the <see cref="P:AdonisUI.Controls.MessageBoxModel.Buttons"/> collection.</param>
+        </member>
+        <member name="T:AdonisUI.Controls.MessageBoxWindow">
+            <summary>
+            Displays a message box.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.ButtonStyle">
+            <summary>
+            A <see cref="T:System.Windows.Style"/> targeting <see cref="T:System.Windows.Controls.Button"/> that represents the style of all buttons inside the message box.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.CheckBoxStyle">
+            <summary>
+            A <see cref="T:System.Windows.Style"/> targeting <see cref="T:System.Windows.Controls.CheckBox"/> that represents the style of all check boxes inside the message box.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.ButtonContainerStyle">
+            <summary>
+            A <see cref="T:System.Windows.Style"/> targeting <see cref="T:System.Windows.Controls.Border"/> that represents the style of the button container row.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.MaxRelativeScreenWidth">
+            <summary>
+            A <see cref="T:System.Double"/> that represents the maximum width of the message box relative to the current screen width.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.MaxRelativeScreenHeight">
+            <summary>
+            A <see cref="T:System.Double"/> that represents the maximum height of the message box relative to the current screen height.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.MaxWidthStep">
+            <summary>
+            A <see cref="T:System.Double"/> that represents the amount of which the maximum width is increased in case it does not fit the screen.
+            The message box will choose the smallest multiple of this value where its height does not become larger than specified via <see cref="F:AdonisUI.Controls.MessageBoxWindow.MaxRelativeScreenHeightProperty"/>.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxWindow.ButtonStyleProperty">
+            <summary>
+            A <see cref="T:System.Windows.Style"/> targeting <see cref="T:System.Windows.Controls.Button"/> that represents the style of all buttons inside the message box.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxWindow.CheckBoxStyleProperty">
+            <summary>
+            A <see cref="T:System.Windows.Style"/> targeting <see cref="T:System.Windows.Controls.CheckBox"/> that represents the style of all check boxes inside the message box.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxWindow.ButtonContainerStyleProperty">
+            <summary>
+            A <see cref="T:System.Windows.Style"/> targeting <see cref="T:System.Windows.Controls.Border"/> that represents the style of the button container row.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxWindow.MaxRelativeScreenWidthProperty">
+            <summary>
+            A <see cref="T:System.Double"/> that represents the maximum width of the message box relative to the current screen width.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxWindow.MaxRelativeScreenHeightProperty">
+            <summary>
+            A <see cref="T:System.Double"/> that represents the maximum height of the message box relative to the current screen height.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Controls.MessageBoxWindow.MaxWidthStepProperty">
+            <summary>
+            A <see cref="T:System.Double"/> that represents the amount of which the maximum width is increased in case it does not fit the screen.
+            The message box will choose the smallest multiple of this value where its height does not become larger than specified via <see cref="F:AdonisUI.Controls.MessageBoxWindow.MaxRelativeScreenHeightProperty"/>.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.CheckBoxesBelowTextView">
+            <summary>
+            A <see cref="T:System.ComponentModel.ICollectionView"/> that represents the check boxes that are displayed below the message box text.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Controls.MessageBoxWindow.CheckBoxesNextToButtonsView">
+            <summary>
+            A <see cref="T:System.ComponentModel.ICollectionView"/> that represents the check boxes that are displayed next to the message box buttons.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.#ctor">
+            <summary>
+            Creates a new instance of <see cref="T:AdonisUI.Controls.MessageBoxWindow"/>.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.CanCancel">
+            <summary>
+            Determines if the window can be cancelled via close button or keyboard shortcuts.
+            </summary>
+            <returns><see langword="true"/> if the window can be cancelled.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.GetCurrentScreenBounds">
+            <summary>
+            Gets the screen bounds of the screen the window is currently in.
+            </summary>
+            <returns>A <see cref="T:System.Windows.Rect"/> representing the current screen bounds.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.CalcMaxWidth(System.Windows.Size)">
+            <summary>
+            Calculates the maximum width of the window depending on its content and the available screen space.
+            </summary>
+            <param name="availableSize">A <see cref="T:System.Windows.Size"/> that reflects the available size that the window can give to the child.</param>
+            <returns>A <see cref="T:System.Double"/> that is used as the window's MaxWidth.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.CalcDesiredActualSizeDiff(System.Windows.FrameworkElement)">
+            <summary>
+            Calculates the difference between the desired size and actual size of a <see cref="T:System.Windows.FrameworkElement"/> measured against positive infinity.
+            </summary>
+            <param name="element">A <see cref="T:System.Windows.FrameworkElement"/> whose size difference is about to be measured.</param>
+            <returns>A <see cref="T:System.Windows.Size"/> that represents the calculated difference in width and height.</returns>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.AttachButtonClickHandlers">
+            <summary>
+            Finds all child buttons in <see cref="F:AdonisUI.Controls.MessageBoxWindow.PART_MessageBoxButtonContainer"/> and attaches a click handler to of them.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.MessageBoxButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles a click on one of the displayed message box buttons.
+            </summary>
+            <param name="sender">The button that was clicked on.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.PlayOpeningSound">
+            <summary>
+            Plays a system sound depending on the associated <see cref="T:AdonisUI.Controls.MessageBoxImage"/>.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Controls.MessageBoxWindow.GetDefaultCancelResult">
+            <summary>
+            Gets the message box result used when the window is closed but no message box button has been clicked.
+            </summary>
+            <returns>A <see cref="T:AdonisUI.Controls.MessageBoxResult"/> that represents the message box window's result.</returns>
+        </member>
+        <member name="T:AdonisUI.Controls.RippleHost">
+            <summary>
+            A control offering elliptical fade-in and fade-out animations for its content on mouse down.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Converters.AllBoolsToBoolConverter">
+            <summary>
+            Takes multiple bools as input and returns true if all bools are true.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Converters.AllVisibilitiesToVisibilityConverter">
+            <summary>
+            Takes multiple Visibilities as input and returns a single Visibility of the same value if they are all equal
+            or returns Visibility.Visible.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Converters.MathConverter">
+            <summary>
+            Value converter that performs arithmetic calculations over its argument(s)
+            </summary>
+            <remarks>
+            MathConverter can act as a value converter, or as a multivalue converter (WPF only).
+            It is also a markup extension (WPF only) which allows to avoid declaring resources,
+            ConverterParameter must contain an arithmetic expression over converter arguments. Operations supported are +, -, * and /
+            Single argument of a value converter may referred as x, a, or {0}
+            Arguments of multi value converter may be referred as x,y,z,t (first-fourth argument), or a,b,c,d, or {0}, {1}, {2}, {3}, {4}, ...
+            The converter supports arithmetic expressions of arbitrary complexity, including nested subexpressions
+            </remarks>
+        </member>
+        <member name="T:AdonisUI.Extensions.DataGridExtension">
+            <summary>
+            Provides attached behaviors related to the DataGrid control.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.DataGridExtension.GetHasAnyRowError(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.DataGridExtension.HasAnyRowErrorProperty"/> attached property of the specified DataGrid.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.DataGridExtension.SetHasAnyRowError(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.DataGridExtension.HasAnyRowErrorProperty"/> attached property of the specified DataGrid.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.DataGridExtension.GetHadAnyRowError(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.DataGridExtension.HadAnyRowErrorProperty"/> attached property of the specified DataGrid.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.DataGridExtension.SetHadAnyRowError(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.DataGridExtension.HadAnyRowErrorProperty"/> attached property of the specified DataGrid.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.DataGridExtension.GetIsReportingErrorsToDataGrid(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.DataGridExtension.IsReportingErrorsToDataGridProperty"/> attached property of the specified DataGridRow.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.DataGridExtension.SetIsReportingErrorsToDataGrid(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.DataGridExtension.IsReportingErrorsToDataGridProperty"/> attached property of the specified DataGridRow.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.DataGridExtension.HasAnyRowErrorProperty">
+            <summary>
+            A DependencyProperty that will be true if any DataGridRow in the DataGrid has <see cref="F:System.Windows.Controls.Validation.HasErrorProperty"/> set to true.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.DataGridExtension.HadAnyRowErrorProperty">
+            <summary>
+            A DependencyProperty that will be true if any DataGridRow in the DataGrid has or had at least once <see cref="F:System.Windows.Controls.Validation.HasErrorProperty"/> set to true.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.DataGridExtension.IsReportingErrorsToDataGridProperty">
+            <summary>
+            A DependencyProperty that needs to be true if the DataGridRow should update the <see cref="F:AdonisUI.Extensions.DataGridExtension.HasAnyRowErrorProperty"/> and <see cref="F:AdonisUI.Extensions.DataGridExtension.HadAnyRowErrorProperty"/> properties of its DataGrid.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Extensions.GridViewSortExtension">
+            <summary>
+            Based on the approach of Thomas Levesque
+            See http://www.thomaslevesque.com/2009/03/27/wpf-automatically-sort-a-gridview-when-a-column-header-is-clicked/
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Extensions.ScrollBarExpansionMode">
+            <summary>
+            Values for controlling when to expand scroll bars.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollBarExpansionMode.NeverExpand">
+            <summary>
+            Never expand the scroll bar. Keep it always collapsed.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollBarExpansionMode.ExpandOnHover">
+            <summary>
+            Expand the scroll bar when the mouse hovers over it.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollBarExpansionMode.AlwaysExpand">
+            <summary>
+            Always expand the scroll bar. Do not collapse it.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Extensions.ScrollBarExtension">
+            <summary>
+            Provides attached behaviors related to the ScrollBar control.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollBarExtension.GetExpansionMode(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.ScrollBarExtension.ExpansionModeProperty"/> attached property of the specified ScrollBar.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollBarExtension.SetExpansionMode(System.Windows.DependencyObject,AdonisUI.Extensions.ScrollBarExpansionMode)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.ScrollBarExtension.ExpansionModeProperty"/> attached property of the specified ScrollBar.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollBarExtension.ExpansionModeProperty">
+            <summary>
+            A DependencyProperty that controls when to expand and collapse the scroll bar.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Extensions.ScrollBarPlacement">
+            <summary>
+            Values for controlling the placement of scroll bars.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollBarPlacement.Docked">
+            <summary>
+            Place the scroll bar next to content (default).
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollBarPlacement.Overlay">
+            <summary>
+            Place the scroll bar on top of content.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Extensions.ScrollViewerExtension">
+            <summary>
+            Provides attached behaviors related to the ScrollViewer control.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.GetVerticalScrollBarExpansionMode(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.VerticalScrollBarExpansionModeProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.SetVerticalScrollBarExpansionMode(System.Windows.DependencyObject,AdonisUI.Extensions.ScrollBarExpansionMode)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.VerticalScrollBarExpansionModeProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.GetHorizontalScrollBarExpansionMode(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.HorizontalScrollBarExpansionModeProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.SetHorizontalScrollBarExpansionMode(System.Windows.DependencyObject,AdonisUI.Extensions.ScrollBarExpansionMode)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.HorizontalScrollBarExpansionModeProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.GetVerticalScrollBarPlacement(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.VerticalScrollBarPlacementProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.SetVerticalScrollBarPlacement(System.Windows.DependencyObject,AdonisUI.Extensions.ScrollBarPlacement)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.VerticalScrollBarPlacementProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.GetHorizontalScrollBarPlacement(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.HorizontalScrollBarPlacementProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.SetHorizontalScrollBarPlacement(System.Windows.DependencyObject,AdonisUI.Extensions.ScrollBarPlacement)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.HorizontalScrollBarPlacementProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.GetHideScrollBarsUntilMouseOver(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.HideScrollBarsUntilMouseOverProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.ScrollViewerExtension.SetHideScrollBarsUntilMouseOver(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the value of the <see cref="F:AdonisUI.Extensions.ScrollViewerExtension.HideScrollBarsUntilMouseOverProperty"/> attached property of the specified ScrollViewer.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollViewerExtension.VerticalScrollBarExpansionModeProperty">
+            <summary>
+            A DependencyProperty that controls when to expand and collapse the vertical scroll bar.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollViewerExtension.HorizontalScrollBarExpansionModeProperty">
+            <summary>
+            A DependencyProperty that controls when to expand and collapse the horizontal scroll bar.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollViewerExtension.VerticalScrollBarPlacementProperty">
+            <summary>
+            A DependencyProperty that controls the placement of the vertical scroll bar.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollViewerExtension.HorizontalScrollBarPlacementProperty">
+            <summary>
+            A DependencyProperty that controls the placement of the horizontal scroll bar.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.ScrollViewerExtension.HideScrollBarsUntilMouseOverProperty">
+            <summary>
+            A DependencyProperty that controls whether to set up fade-in and fade-out animations for both scroll bars when entering or leaving the scroll viewer.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Extensions.TreeViewItemMouseOverExtension">
+            <summary>
+            See https://blogs.msdn.microsoft.com/mikehillberg/2006/09/21/a-trigger-for-the-treeviewitem-directly-under-the-mouse/
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.TreeViewItemMouseOverExtension._currentItem">
+            <summary>
+            The TreeViewItem that the mouse is currently directly over (or null).
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.TreeViewItemMouseOverExtension.IsMouseDirectlyOverItemKey">
+            <summary>
+            A DependencyProperty that will be true only on the TreeViewItem that the mouse is directly over.
+            I.e., this won't be set on that parent item.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Extensions.TreeViewItemMouseOverExtension.UpdateOverItemEvent">
+            <summary>
+            A RoutedEvent used to find the nearest encapsulating TreeViewItem to the mouse's current position.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.TreeViewItemMouseOverExtension.OnUpdateOverItem(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            This method is a listener for the UpdateOverItemEvent. When it is received, it means that the sender is the closest TreeViewItem to the mouse
+            (closest in the sense of the tree,  not geographically).
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Extensions.TreeViewItemMouseOverExtension.OnMouseTransition(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            This method is a listener for both the MouseEnter event and the MouseLeave event on TreeViewItems.
+            It updates the _currentItem, and updates the IsMouseDirectlyOverItem property on the previous TreeViewItem and the new TreeViewItem.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Helpers.HwndInterop">
+            <summary>
+            Helper class for interactions with system window events
+            </summary>
+        </member>
+        <member name="E:AdonisUI.Helpers.HwndInterop.SizeChanged">
+            <summary>
+            Is raised when the <see cref="F:AdonisUI.Helpers.HwndInterop.WM_SIZE"/> is occuring.
+            </summary>
+        </member>
+        <member name="E:AdonisUI.Helpers.HwndInterop.PositionChanging">
+            <summary>
+            Is raised when the <see cref="F:AdonisUI.Helpers.HwndInterop.WM_WINDOWPOSCHANGING"/> is occuring.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Helpers.HwndInterop.#ctor(System.Windows.Window)">
+            <summary>
+            Helper class for interactions with system window events
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Helpers.HwndInterop.Maximize">
+            <summary>
+            Sends a system event to maximize the window.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Helpers.HwndInterop.Restore">
+            <summary>
+            Sends a system event to restore the window.
+            </summary>
+        </member>
+        <member name="M:AdonisUI.Helpers.HwndInterop.Minimize">
+            <summary>
+            Sends a system event to minimize the window.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.DRAWFRAME">
+            <summary>
+            Draws a frame (defined in the window's class description) around the window. Same as the <see cref="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.FRAMECHANGED"/> flag.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.FRAMECHANGED">
+            <summary>
+            Sends a WM_NCCALCSIZE message to the window, even if the window's size is not being changed.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.HIDEWINDOW">
+            <summary>
+            Hides the window.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOACTIVATE">
+            <summary>
+            Does not activate the window.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOCOPYBITS">
+            <summary>
+            Discards the entire contents of the client area.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOMOVE">
+            <summary>
+            Retains the current position (ignores the x and y members).
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOOWNERZORDER">
+            <summary>
+            Does not change the owner window's position in the Z order.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.SWP_NOREDRAW">
+            <summary>
+            Does not redraw changes.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOREPOSITION">
+            <summary>
+            Does not change the owner window's position in the Z order. Same as the <see cref="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOOWNERZORDER"/> flag.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOSENDCHANGING">
+            <summary>
+            Prevents the window from receiving the WM_WINDOWPOSCHANGING message.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOSIZE">
+            <summary>
+            Retains the current size (ignores the cx and cy members).
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.NOZORDER">
+            <summary>
+            Retains the current Z order (ignores the hwndInsertAfter member).
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.SHOWWINDOW">
+            <summary>
+            Displays the window.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropPositionChangingEventArgs.PositionChangeType.MAXIMIZERESTORE">
+            <summary>
+            No official documentation found. Seems to occur whe maximizing or restoring a window.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType">
+            <summary>
+            The type of resizing requested.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.Restored">
+            <summary>
+            The window has been resized, but neither the <see cref="F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.Minimized"/> nor <see cref="F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.Maximized"/> value applies.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.Minimized" -->
+        <member name="F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.Maximized">
+            <summary>
+            The window has been maximized.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.MaxShow">
+            <summary>
+            Message is sent to all pop-up windows when some other window has been restored to its former size.
+            </summary>
+        </member>
+        <member name="F:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.ResizeRequestType.MaxHide">
+            <summary>
+            Message is sent to all pop-up windows when some other window is maximized.
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Helpers.HwndInteropSizeChangedEventArgs.Type">
+            <summary>
+            The type of resizing requested.
+            </summary>
+        </member>
+        <member name="T:AdonisUI.Helpers.ScreenInterop">
+            <summary>
+            Represents a display device or multiple display devices on a single system.
+            See https://github.com/micdenny/WpfScreenHelper/
+            </summary>
+        </member>
+        <member name="P:AdonisUI.Helpers.ScreenInterop.AllScreens">
+            <summary>
+            Gets an array of all displays on the system.
+            </summary>
+            <returns>An enumerable of type Screen, containing all displays on the system.</returns>
+        </member>
+        <member name="P:AdonisUI.Helpers.ScreenInterop.Bounds">
+            <summary>
+            Gets the bounds of the display.
+            </summary>
+            <returns>A <see cref="T:System.Windows.Rect" />, representing the bounds of the display.</returns>
+        </member>
+        <member name="P:AdonisUI.Helpers.ScreenInterop.DeviceName">
+            <summary>
+            Gets the device name associated with a display.
+            </summary>
+            <returns>The device name associated with a display.</returns>
+        </member>
+        <member name="P:AdonisUI.Helpers.ScreenInterop.Primary">
+            <summary>
+            Gets a value indicating whether a particular display is the primary device.
+            </summary>
+            <returns>true if this display is primary; otherwise, false.</returns>
+        </member>
+        <member name="P:AdonisUI.Helpers.ScreenInterop.PrimaryScreen">
+            <summary>
+            Gets the primary display.
+            </summary>
+            <returns>The primary display.</returns>
+        </member>
+        <member name="P:AdonisUI.Helpers.ScreenInterop.WorkingArea">
+            <summary>
+            Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
+            </summary>
+            <returns>A <see cref="T:System.Windows.Rect" />, representing the working area of the display.</returns>
+        </member>
+        <member name="M:AdonisUI.Helpers.ScreenInterop.FromHandle(System.IntPtr)">
+            <summary>
+            Retrieves a Screen for the display that contains the largest portion of the specified control.
+            </summary>
+            <param name="hwnd">The window handle for which to retrieve the Screen.</param>
+            <returns>A Screen for the display that contains the largest region of the object. In multiple display environments where no display contains any portion of the specified window, the display closest to the object is returned.</returns>
+        </member>
+        <member name="M:AdonisUI.Helpers.ScreenInterop.FromPoint(System.Windows.Point)">
+            <summary>
+            Retrieves a Screen for the display that contains the specified point.
+            </summary>
+            <param name="point">A <see cref="T:System.Windows.Point" /> that specifies the location for which to retrieve a Screen.</param>
+            <returns>A Screen for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.</returns>
+        </member>
+        <member name="M:AdonisUI.Helpers.ScreenInterop.Equals(System.Object)">
+            <summary>
+            Gets or sets a value indicating whether the specified object is equal to this Screen.
+            </summary>
+            <param name="obj">The object to compare to this Screen.</param>
+            <returns>true if the specified object is equal to this Screen; otherwise, false.</returns>
+        </member>
+        <member name="M:AdonisUI.Helpers.ScreenInterop.GetHashCode">
+            <summary>
+            Computes and retrieves a hash code for an object.
+            </summary>
+            <returns>A hash code for an object.</returns>
+        </member>
+        <member name="T:AdonisUI.Helpers.SystemContextMenuInterop">
+            <summary>
+            Helper class for interactions with the system's native context menu
+            </summary>
+        </member>
+        <member name="M:AdonisUI.ResourceLocator.RemoveAdonisResources(System.Windows.ResourceDictionary)">
+            <summary>
+            Removes all resources of AdonisUI from the provided resource dictionary.
+            </summary>
+            <param name="rootResourceDictionary">The resource dictionary containing AdonisUI's resources. Expected are the resource dictionaries of the app or window.</param>
+        </member>
+        <member name="M:AdonisUI.ResourceLocator.AddAdonisResources(System.Windows.ResourceDictionary)">
+            <summary>
+            Adds any Adonis theme to the provided resource dictionary.
+            </summary>
+            <param name="rootResourceDictionary">The resource dictionary containing AdonisUI's resources. Expected are the resource dictionaries of the app or window.</param>
+        </member>
+        <member name="M:AdonisUI.ResourceLocator.SetColorScheme(System.Windows.ResourceDictionary,System.Uri,System.Uri)">
+            <summary>
+            Adds a resource dictionary with the specified uri to the MergedDictionaries collection of the <see cref="!:rootResourceDictionary"/>.
+            Additionally all child ResourceDictionaries are traversed recursively to find the current color scheme which is removed if found.
+            </summary>
+            <param name="rootResourceDictionary">The resource dictionary containing the currently active color scheme. It will receive the new color scheme in its MergedDictionaries. Expected are the resource dictionaries of the app or window.</param>
+            <param name="colorSchemeResourceUri">The Uri of the color scheme to be set. Can be taken from the <see cref="T:AdonisUI.ResourceLocator"/> class.</param>
+            <param name="currentColorSchemeResourceUri">Optional uri to an external color scheme that is not provided by AdonisUI.</param>
+        </member>
+        <member name="M:AdonisUI.SpaceExtension.TryParseExpression(System.String,System.Double@,System.Double@)">
+            <summary>
+            Expects an expression in the form of [x+y] or [x-y] where x is parsed as factor and y as offset
+            </summary>
+        </member>
+        <member name="T:AdonisUI.ViewModels.PropertyChangedBase">
+            <inheritdoc cref="T:System.ComponentModel.INotifyPropertyChanged" />
+            <summary>
+            Notifies clients that a property value is changing or has changed.
+            It includes methods to set the value of a property and automatically raise events on the appropriate event handlers.
+            </summary>
+        </member>
+        <member name="E:AdonisUI.ViewModels.PropertyChangedBase.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="M:AdonisUI.ViewModels.PropertyChangedBase.NotifyPropertyChanged(System.String)">
+            <summary>
+            Raise an event on <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/> to indicate that a property value changed.
+            </summary>
+            <param name="propertyName">Name of the changed property value.</param>
+        </member>
+        <member name="M:AdonisUI.ViewModels.PropertyChangedBase.SetProperty``1(``0@,``0,System.String)">
+            <summary>
+            <para>
+            Set <paramref name="storage"/> to the given <paramref name="value"/>.
+            </para>
+            <para>
+            If the given <paramref name="value"/> is different than the current value,
+            it raises an event on <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/> after the storage was changed.
+            </para>
+            </summary>
+            <typeparam name="T">The type of the value to set.</typeparam>
+            <param name="storage">Reference to the storage field.</param>
+            <param name="value">New value to set.</param>
+            <param name="propertyName">Name of the property.</param>
+            <returns><see langword="true"/> if the value was different from the <paramref name="storage"/> variable and an event on <see cref="E:AdonisUI.ViewModels.PropertyChangedBase.PropertyChanged"/> was raised; otherwise, <see langword="false"/>.</returns>
+        </member>
+    </members>
+</doc>

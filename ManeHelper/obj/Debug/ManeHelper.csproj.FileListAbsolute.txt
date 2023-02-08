@@ -1,0 +1,10 @@
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\bin\Debug\ManeHelper.dll
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\bin\Debug\ManeHelper.pdb
+C:\Users\Mane\source\repos\gmoveridCalc\FinalBuild\Debug\ManeHelper.dll.config
+C:\Users\Mane\source\repos\gmoveridCalc\FinalBuild\Debug\ManeHelper.dll
+C:\Users\Mane\source\repos\gmoveridCalc\FinalBuild\Debug\ManeHelper.pdb
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\obj\Debug\ManeHelper.csproj.AssemblyReference.cache
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\obj\Debug\ManeHelper.csproj.CoreCompileInputs.cache
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\obj\Debug\ManeHelper.csproj.CopyComplete
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\obj\Debug\ManeHelper.dll
+C:\Users\Mane\source\repos\gmoveridCalc\ManeHelper\obj\Debug\ManeHelper.pdb

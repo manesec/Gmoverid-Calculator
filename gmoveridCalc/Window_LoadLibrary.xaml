@@ -1,0 +1,102 @@
+﻿<adonisControls:AdonisWindow x:Class="gmoveridCalc.Window_LoadLibrary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+        xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:local="clr-namespace:gmoveridCalc" Background="#404258" 
+        mc:Ignorable="d" Title="Load Library" ResizeMode="NoResize"  PlaceTitleBarOverContent="True"
+                             
+        Height="460" Width="700">
+    
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+
+    
+    <StackPanel>
+        <Grid Margin="0 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="460"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- List Tree -->
+            <StackPanel Grid.Column="0" Margin="0 30 0 0">
+                <ScrollViewer Height="427" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"
+                              PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" >
+                    <ListBox x:Name="ListBox_Library" SelectionChanged="ListBox_Library_SelectionChanged" PreviewMouseDoubleClick="ListBox_Library_PreviewMouseDoubleClick"
+                             ></ListBox>
+                </ScrollViewer>
+            </StackPanel> 
+
+            <!-- Right -->
+            <StackPanel Grid.Column="1" Background="#474E68" Margin="0 0 0 0">
+                <StackPanel Height="30"></StackPanel>
+                <!-- Button -->
+                <StackPanel Height="50" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Refresh" x:Name="Button_Refresh" Click="Button_Refresh_Click"> </Button>
+                        <Button Content="Open Library Folder" x:Name="Button_open_library_folder" Click="Button_open_library_folder_Click"> </Button>
+                        <Button Content="Open Library Maker" x:Name="Button_OpenLibraryMaker" Click="Button_OpenLibraryMaker_Click"> </Button>
+                        <StackPanel.Resources>
+                            <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                <Style.Setters>
+                                    <Setter Property="Margin" Value="5 5 0 0"></Setter>
+                                    <Setter Property="Height" Value="40"></Setter>
+                                    <Setter Property="Width" Value="140"></Setter>
+                                    <Setter Property="Background" Value="#404258"></Setter>
+                                </Style.Setters>
+                            </Style>
+                        </StackPanel.Resources>
+                    </StackPanel>
+                </StackPanel>
+                
+                <!-- Information -->
+                <StackPanel Background="#474E68" Height="360" Width="420" Margin="0 10 0 10">
+                    <Label Content="Library information" FontSize="20"></Label>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label x:Name="Label_Mosfet_Type" Content="Please" BorderBrush="White" Background="#6B728E"
+                               BorderThickness="1px" Padding="2" ></Label>
+                        <Label x:Name="Label_Library_Name" Content="Select Library on the left." Margin="10 1 0 0" Padding="2"></Label>
+                    </StackPanel>
+
+                    <Label Content="Scan Parameters" FontSize="20"></Label>
+                    <Grid Height="25" Width="400" Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Content -->
+                        <Label x:Name="Label_L" Content="" Grid.Column="0"></Label>
+                        <Label x:Name="Label_W" Content="" Grid.Column="1"></Label>
+                        <Label x:Name="Label_Mul" Content="" Grid.Column="2"></Label>
+                        <Label x:Name="Label_Poly"  Content="" Grid.Column="3"></Label>
+                        
+                        <Grid.Resources>
+                            <Style TargetType="Label">
+                                <Style.Setters>
+                                    <Setter Property="Foreground" Value="White"></Setter>
+                                </Style.Setters>
+                            </Style>
+                        </Grid.Resources>
+                    </Grid>  
+
+                    <Label Content="Note" FontSize="20"></Label>
+                    <TextBox x:Name="TextBox_Note" Height="150" Margin="0 10 0 0"
+                      TextAlignment="Left" TextWrapping="Wrap" IsReadOnly="True" IsUndoEnabled="False"
+                    VerticalScrollBarVisibility="Visible" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" ContextMenu="{x:Null}" 
+                        ></TextBox>
+
+                    <Button x:Name="Button_Select_Library" Content="Select Library" Height="35"
+                            Margin="0 10 0 0" Click="Button_Select_Library_Click" Background="#404258" ></Button>
+                    
+                </StackPanel> 
+            </StackPanel> 
+        </Grid>
+    </StackPanel>
+</adonisControls:AdonisWindow>
