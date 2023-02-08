@@ -6,7 +6,7 @@ Learning gm/id Methods and collect from internet.
 
 No ranking order !!
 
-[Tutorial: Quick start gm/id Calculator](https://youtu.be/4sbCtTHqbB8)
+[Tutorial: Quick start gm/id Calculator](https://youtu.be/RqzBvV3p_gQ)
 
 ## Videos
 
