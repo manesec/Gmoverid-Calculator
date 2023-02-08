@@ -17,18 +17,23 @@ If you find some problems, you can submit them in a GitHub issue (thank you).
 
 Because I want to make a software to get some parameters about gm/id in the shortest time without spending too much time.
 
+![Main Windows](./Document/img/dmeo_pmos_calc.png)
+
 [[More Screenshot](./Document/Screenshot.md)]
 
 Please correct me if there are any mistakes !!
 
+And, hope you like this ;)
+
 ## License
-GNU GENERAL PUBLIC LICENSE Version 3 
+GNU GENERAL PUBLIC LICENSE Version 3.
 
 ## TODO
 + Add Trained Cache and add delete all cache button.
 + Add Vds ~ gds tools.
 + Add auto test poly tools.
 + Range Limit.
++ Fix Windows 11 Windows Display Problem.
 + Detect CSV input Limit.
 
 by [@manesec](https://github.com/manesec).

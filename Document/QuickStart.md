@@ -3,7 +3,9 @@
 Back to [Document](Readme.md).
 
 Please watch a video in youtube:
-[Tutorial: Quick start gm/id Calculator](https://youtu.be/RqzBvV3p_gQ)
+
++ [Tutorial: Quick start gm/id Calculator](https://youtu.be/RqzBvV3p_gQ)
++ [PMOS Setup - Full video](https://youtu.be/9n_GrmqfN-s)
 
 ## Note
 1. Build a circuit on cadence.
