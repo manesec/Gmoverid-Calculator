@@ -28,6 +28,12 @@ And, hope you like this ;)
 ## License
 GNU GENERAL PUBLIC LICENSE Version 3.
 
+## Know Issue
+Give me some time to fix it :P 
+
++  ft and Id/W not good in 3.3V  (thanks for [大亚湾_凤凰男爵](https://space.bilibili.com/149169441)).
+
+
 ## TODO
 + Add Trained Cache and add delete all cache button.
 + Add Vds ~ gds tools.
