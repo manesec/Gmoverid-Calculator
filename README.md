@@ -1,4 +1,8 @@
-# gmoverid-Calculator
+# [Deprecated] gmoverid-Calculator
+
+**Deprecated due to lost access to the university servers.**
+
+
 A C# version of gmoverid calculator.
 
 ![Main Windows](./Document/img/MainWindows.png)
